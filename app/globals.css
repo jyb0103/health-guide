@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root { --background: #fff; --foreground: #1c1917; }
+.dark { --background: #0a0a0a; --foreground: #fff; }
+html { scroll-behavior: smooth; }
+body { background: var(--background); color: var(--foreground); -webkit-font-smoothing: antialiased; }
