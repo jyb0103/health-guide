@@ -14,9 +14,7 @@ const SECURITY_HEADERS: Record<string, string> = {
 
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
-  const ip = req.headers.get("x-real-ip")
-    ?? req.headers.get("x-forwarded-for")?.split(",").pop()?.trim()
-    ?? "unknown";
+  const ip = req.headers.get("x-real-ip") ?? req.headers.get("x-forwarded-for")?.split(",").pop()?.trim() ?? "unknown";
 
   if (pathname.startsWith("/api/")) {
     const start = Date.now();
